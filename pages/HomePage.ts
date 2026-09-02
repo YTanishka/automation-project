@@ -21,8 +21,6 @@ export class HomePage {
       this.page.waitForURL("**/products"),
       this.productLink.click()
     ])
-    //await this.productLink.click();
-   // await this.page.waitForURL(/\/products/);
   }
 
   async clickProductsWithoutWait() {
