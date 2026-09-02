@@ -1,0 +1,37 @@
+{
+  "validUser": {
+    "email": "tanishka2026@gmail.com",
+    "password": "Test@12345"
+  },
+  "newUser": {
+    "name": "tanishka",
+    "email": "tanishka@gmail.com",
+    "password": "Test@26",
+    "day":"26",
+    "month":"7",
+    "year": "2004",
+    "firstName": "tanishka",
+    "lastName": "test",
+    "company": "Test Company",
+    "address": "123 Test Street",
+    "address2": "Near Test Mall",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "city": "Gwalior",
+    "zipcode": "474001",
+    "mobileNumber": "9876543210"
+  },
+  "invalidUser": {
+    "email": "wrong@example.com",
+    "password": "wrong123"
+  },
+  "contactDetails": {
+    "name": "tanishka",
+    "email": "tanishka2026@gmail.com",
+    "subject": "Test Subject",
+    "message": "Test Message"
+  },
+  "product": {
+    "name": "Blue Top"
+  }
+}
