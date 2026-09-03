@@ -23,8 +23,10 @@ test("@e2e  Signup to Cart", async ({ page }) => {
   //click signup / login
   await homePage.signupLoginLink.click();
 
+  const uniqueEmail = `tanishka${Date.now()}@gmail.com`;
+
   // enter new user detail
-  await signupPage.signup(userData.newUser.name, userData.newUser.email);
+  await signupPage.signup(userData.newUser.name, uniqueEmail);
 
   await expect(accountCreation.title).toBeVisible();
 

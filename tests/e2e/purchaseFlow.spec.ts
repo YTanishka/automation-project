@@ -9,7 +9,7 @@ import { CartPage } from "../../pages/CartPage";
 import { PaymentPage } from "../../pages/PaymentPage";
 import paymentData from "../../test-data/payment.json";
 
-test("@e2e @regression Login To Product Page", async ({ page }) => {
+test("@e2e  Login To Product Page", async ({ page }) => {
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
   const productPage = new ProductPage(page);
