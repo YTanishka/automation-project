@@ -71,7 +71,7 @@ test("@e2e  Login To Product Page", async ({ page }) => {
   // wait for payment page
   await page.waitForURL("**/payment");
 
-  await expect(page.getByRole("heading", { name: "Payment" })).toBeVisible();
+  await expect(page.locator("input[data-qa='name-on-card']")).toBeVisible();
 
   //fill payment details
   await paymentPage.enterPayementDetails(
