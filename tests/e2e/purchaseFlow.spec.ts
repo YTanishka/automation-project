@@ -37,7 +37,7 @@ test("@e2e  Login To Product Page", async ({ page }) => {
   //add blue top to cart
   await productPage.addProductToCart(userData.product.name);
 
-  await productPage.continueShopping.click();
+  //await productPage.continueShopping.click();
 
   // go to cart
   await homePage.cartLink.click();

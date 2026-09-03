@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator, expect } from "@playwright/test";
 
 export class ProductPage {
   readonly page: Page;
@@ -84,12 +84,20 @@ export class ProductPage {
       ? this.page
           .locator(".product-image-wrapper")
           .filter({ hasText: productName })
+          .first()
       : this.page.locator(".product-image-wrapper").first();
 
-    // to  hover on product to see add to cart option
-     await productCard.hover();
-     await productCard.locator(".add-to-cart").first().click();
-    // await productCard.hover({ force: true });
-    // await productCard.locator(".add-to-cart").first().click({ force: true });
+    await productCard.hover();
+    await productCard.locator(".add-to-cart").first().click();
+
+    // Wait for confirmation modal
+    await this.page.getByText("Your product has been added to cart.").waitFor();
+
+    // Close the modal
+    await this.page
+      .getByRole("button", {
+        name: "Continue Shopping",
+      })
+      .click();
   }
 }
