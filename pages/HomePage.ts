@@ -12,15 +12,15 @@ export class HomePage {
 
     this.productLink = page.getByRole("link", { name: "Products" });
     this.signupLoginLink = page.getByRole("link", { name: "Signup / Login" });
-    this.cartLink = page.getByRole("link", { name: "Cart" });
+    this.cartLink = page.locator('a[href="/view_cart"]').first();
     this.contactUs = page.getByRole("link", { name: "Contact us" });
   }
 
   async clickProducts() {
     await Promise.all([
       this.page.waitForURL("**/products"),
-      this.productLink.click()
-    ])
+      this.productLink.click(),
+    ]);
   }
 
   async clickProductsWithoutWait() {

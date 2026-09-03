@@ -26,6 +26,8 @@ test("@e2e  Signup to Cart", async ({ page }) => {
   // enter new user detail
   await signupPage.signup(userData.newUser.name, userData.newUser.email);
 
+  await expect(accountCreation.title).toBeVisible();
+
   // create new user account
   await accountCreation.CreateAccount(
     userData.newUser.password,

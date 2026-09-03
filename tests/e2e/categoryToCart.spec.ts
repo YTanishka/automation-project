@@ -35,7 +35,7 @@ test("@e2e Category To Cart", async ({ page }) => {
   await productPage.clickWomen();
 
   // click dress
-  await productPage.clickMen();
+  await productPage.clickDress();
 
   // add product to cart
   await productPage.addProductToCart();

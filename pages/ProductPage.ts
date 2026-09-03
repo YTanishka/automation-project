@@ -12,7 +12,7 @@ export class ProductPage {
   readonly women: Locator;
   readonly men: Locator;
   readonly kids: Locator;
-  readonly dress:Locator
+  readonly dress: Locator;
 
   //brands
   readonly polo: Locator;
@@ -33,14 +33,13 @@ export class ProductPage {
     this.searchInput = page.locator("#search_product");
     this.searchBox = page.locator("#submit_search");
 
-    this.women = page.locator('a[href="#Women"]')
+    this.women = page.locator('a[href="#Women"]');
     this.men = page.locator('a[href="#Men"]');
     this.kids = page.locator('a[href="#Kids"]');
-    this.dress = page.getByText("Dress",{exact:true })
-
-    this.polo = page.getByRole("link",{name:"Polo"});
-    this.hm = page.getByRole("link",{name:"H&M"});
-    this.madame = page.getByRole("link",{name:"Madame"});
+    this.dress = page.getByRole("link", { name: "Dress", exact: true }).first();
+    this.polo = page.getByRole("link", { name: "Polo" });
+    this.hm = page.getByRole("link", { name: "H&M" });
+    this.madame = page.getByRole("link", { name: "Madame" });
 
     this.productName = page.locator(".productinfo p");
     this.price = page.locator(".productinfo h2");
@@ -73,7 +72,7 @@ export class ProductPage {
     await this.madame.click();
   }
 
-  async clickDress(){
+  async clickDress() {
     await this.dress.click();
   }
 
@@ -86,7 +85,9 @@ export class ProductPage {
       : this.page.locator(".product-image-wrapper").first();
 
     // to  hover on product to see add to cart option
-    await productCard.hover();
-    await productCard.locator(".add-to-cart").first().click();
+    // await productCard.hover();
+    // await productCard.locator(".add-to-cart").first().click();
+    await productCard.hover({ force: true });
+    await productCard.locator(".add-to-cart").first().click({ force: true });
   }
 }
