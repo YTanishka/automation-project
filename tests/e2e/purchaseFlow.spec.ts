@@ -68,6 +68,11 @@ test("@e2e  Login To Product Page", async ({ page }) => {
   //place order
   await page.getByRole("link", { name: "Place Order" }).click();
 
+  // wait for payment page
+  await page.waitForURL("**/payment");
+
+  await expect(page.getByRole("heading", { name: "Payment" })).toBeVisible();
+
   //fill payment details
   await paymentPage.enterPayementDetails(
     paymentData.name,
