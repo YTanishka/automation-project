@@ -3,6 +3,24 @@ import { ProductPage } from "../pages/ProductPage";
 import { HomePage } from "../pages/HomePage";
 
 test("Verify Product Page", async ({ page }) => {
+
+
+   // Block advertisement requests
+  await page.route("**/*", async (route) => {
+    const url = route.request().url();
+
+    if (
+      url.includes("googleads") ||
+      url.includes("googlesyndication") ||
+      url.includes("doubleclick") ||
+      url.includes("adservice")
+    ) {
+      await route.abort();
+    } else {
+      await route.continue();
+    }
+  });
+
   await page.goto("https://automationexercise.com");
 
   const homePage = new HomePage(page)

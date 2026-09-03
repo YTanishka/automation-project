@@ -87,9 +87,9 @@ export class ProductPage {
       : this.page.locator(".product-image-wrapper").first();
 
     // to  hover on product to see add to cart option
-    // await productCard.hover();
-    // await productCard.locator(".add-to-cart").first().click();
-    await productCard.hover({ force: true });
-    await productCard.locator(".add-to-cart").first().click({ force: true });
+     await productCard.hover();
+     await productCard.locator(".add-to-cart").first().click();
+    // await productCard.hover({ force: true });
+    // await productCard.locator(".add-to-cart").first().click({ force: true });
   }
 }
