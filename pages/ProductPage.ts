@@ -7,6 +7,7 @@ export class ProductPage {
   readonly allProductsText: Locator;
   readonly searchInput: Locator;
   readonly searchBox: Locator;
+  readonly continueShopping: Locator;
 
   //categories
   readonly women: Locator;
@@ -32,6 +33,7 @@ export class ProductPage {
 
     this.searchInput = page.locator("#search_product");
     this.searchBox = page.locator("#submit_search");
+    this.continueShopping = page.getByText("Continue Shopping");
 
     this.women = page.locator('a[href="#Women"]');
     this.men = page.locator('a[href="#Men"]');
