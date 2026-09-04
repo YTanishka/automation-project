@@ -68,7 +68,7 @@ test("@e2e  Login To Product Page", async ({ page }) => {
   //place order
   await page.getByRole("link", { name: "Place Order" }).click();
 
-  // wait for payment page
+  // wait for payment page to load
   await page.waitForURL("**/payment");
 
   await expect(page.locator("input[data-qa='name-on-card']")).toBeVisible();
