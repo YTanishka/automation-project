@@ -80,3 +80,4 @@ pipeline {
 }
 
 // test jenkins webhook and jenkinsfile
+// test automatic Jenkins build
